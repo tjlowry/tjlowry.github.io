@@ -2,4 +2,45 @@
 title: "Tyler Lowry"
 ---
 
-My portfolio and blog
+:::{.columns .gx-5}
+
+:::{.column width="60%" .px-4}
+# Data Scienctist
+
+I'm a Data Science student at BYU-Idaho passionate about turning data into actionable insights. I love exploring the intersection of technology and problem-solving, whether that's through machine learning, data visualization, or full-stack development.
+:::
+
+:::{.column width="40%" .px-4}
+![](profile_pic.jpeg)
+:::
+
+:::
+
+## Skills
+
+:::{.columns .gx-5}
+:::{.column width="50%" .px-4}
+### Data Science & ML
+- Python (Pandas, Polars, Scikit-learn, TensorFlow)
+- R
+- SQL
+
+### Data Visualization
+- Tableau
+- Power BI
+- ggplot
+- Plotly, lets_plot, Seaborn
+:::
+
+:::{.column width="50%" .px-4}
+### Database Management
+- SQL Database Optimization
+- AWS EC2/S3
+- Database Design & Architecture
+
+### Web Development
+- PHP (Filament)
+- JavaScript/TypeScript
+- HTML/CSS
+:::
+:::

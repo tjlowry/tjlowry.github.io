@@ -1,0 +1,29 @@
+---
+title: "Building a Sales Forecasting Model"
+description: "How I developed a 90-day sales forecasting model using machine learning"
+author: "Tyler Lowry"
+date: "2024-01-16"
+categories: [Machine Learning, Python, Projects]
+image: forecast-image.svg
+---
+
+During my internship at PIC Business Systems, I had the opportunity to develop a sales forecasting model that improved prediction accuracy by 30%. Here's how I approached it.
+
+## The Challenge
+
+Accurately predicting sales for the next 90 days was crucial for inventory management and business planning. The existing system relied heavily on manual predictions and didn't account for external factors.
+
+## The Solution
+
+I developed an ensemble model that combined:
+- XGBoost
+- Prophet
+- SARIMA
+
+The model incorporated external factors like:
+- Weather patterns
+- Seasonal trends
+- Historical sales data
+- Market indicators
+
+[Continue reading for more technical details...]

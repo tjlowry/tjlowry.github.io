@@ -9,7 +9,13 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - resume.qmd
       - posts.qmd
+    right:
+      - icon: github
+        href: https://github.com/tjlowry
+      - icon: linkedin
+        href: www.linkedin.com/in/tylerj-lowry
 
 format:
   html:

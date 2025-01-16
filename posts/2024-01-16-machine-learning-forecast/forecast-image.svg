@@ -1,0 +1,25 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  
+  <!-- Grid lines -->
+  <g stroke="#dee2e6" stroke-width="1">
+    <line x1="50" y1="50" x2="50" y2="350"/>
+    <line x1="50" y1="350" x2="750" y2="350"/>
+    <line x1="50" y1="200" x2="750" y2="200" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Actual data line -->
+  <path d="M50,300 Q200,280 350,200 T650,150" 
+        fill="none" stroke="#0d6efd" stroke-width="3"/>
+  
+  <!-- Forecast line -->
+  <path d="M650,150 Q700,130 750,100" 
+        fill="none" stroke="#dc3545" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Legend -->
+  <circle cx="600" cy="50" r="5" fill="#0d6efd"/>
+  <text x="610" y="55" font-family="Arial" font-size="12">Actual Data</text>
+  <circle cx="700" cy="50" r="5" fill="#dc3545"/>
+  <text x="710" y="55" font-family="Arial" font-size="12">Forecast</text>
+</svg>

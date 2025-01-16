@@ -2,22 +2,106 @@
   {
     "objectID": "posts.html",
     "href": "posts.html",
-    "title": "My Blog",
+    "title": "Data Science Blog",
     "section": "",
-    "text": "No matching items"
+    "text": "Building a Sales Forecasting Model\n\n\n\nMachine Learning\n\n\nPython\n\n\nProjects\n\n\n\nHow I developed a 90-day sales forecasting model using machine learning\n\n\n\nTyler Lowry\n\n\nJan 16, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Tyler Lowry",
     "section": "",
-    "text": "My portfolio and blog"
+    "text": "I’m a Data Science student at BYU-Idaho passionate about turning data into actionable insights. I love exploring the intersection of technology and problem-solving, whether that’s through machine learning, data visualization, or full-stack development."
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "Tyler Lowry",
+    "section": "Skills",
+    "text": "Skills\n\n\n\nData Science & ML\n\nPython (Pandas, Polars, Scikit-learn, TensorFlow)\nR\nSQL\n\n\n\nData Visualization\n\nTableau\nPower BI\nggplot\nPlotly, lets_plot, Seaborn\n\n\n\n\nDatabase Management\n\nSQL Database Optimization\nAWS EC2/S3\nDatabase Design & Architecture\n\n\n\nWeb Development\n\nPHP (Filament)\nJavaScript/TypeScript\nHTML/CSS"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "tjlowry02@gmail.com | LinkedIn\n\n\nBrigham Young University-Idaho | Rexburg, ID\nBS, Data Science - Accounting Minor - Machine Learning Certificate\nExpected Graduation: April 2025\nGPA: 3.86\n- Member of Data Science Society\n\n\n\n\n\n\nR, Python, Pandas, Polars, SQL\nMachine Learning, Demand Forecasting, TensorFlow, Scikit-Learn\nTableau, Power BI\n\n\n\n\n\nHTML, CSS, JavaScript, PHP, PySpark\nAPIs, Data Pipelines\nExcel, VBA, Adobe Suite\n\n\n\n\n\n\n\nJune 2023 - Sept 2023 | San Antonio, TX\n\nDeveloped a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE\nEnhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model\nAutomated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts\n\n\n\n\nJan 2023 - Present | Rexburg, ID\n\nCollaborated with team of 3 in developing the front and back ends of the new Maclab website and 3D printing queue\nConducted interviews, reviewed resumes to screen candidates, and provided training to new employees\nFacilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team\nDesigned interactive dashboards to track KPI performance, resulting in a 14% average improvement across all metrics\n\n\n\n\nApril 2024 - Present | Rexburg, ID\n\nServed as a teaching assistant for “Intro to Programming,” “Data Wrangling and Visualization,” and “Math for the Real World”\nLed group and one-on-one tutoring sessions focused on Python, R, Excel, and arithmetic\nProvided general data science support at the Data Science Tutoring Lab, assisting students across various data science courses\n\n\n\n\nSept 2023 - Dec 2023 | Salida, CA\n\nOptimized database design by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime\nIdentified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency\nDeveloped a CRM using a PHP framework, enhancing location data tracking and streamlining communication between salesmen and delivery drivers for improved logistics"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Resume",
+    "section": "",
+    "text": "Brigham Young University-Idaho | Rexburg, ID\nBS, Data Science - Accounting Minor - Machine Learning Certificate\nExpected Graduation: April 2025\nGPA: 3.86\n- Member of Data Science Society"
+  },
+  {
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "Resume",
+    "section": "",
+    "text": "R, Python, Pandas, Polars, SQL\nMachine Learning, Demand Forecasting, TensorFlow, Scikit-Learn\nTableau, Power BI\n\n\n\n\n\nHTML, CSS, JavaScript, PHP, PySpark\nAPIs, Data Pipelines\nExcel, VBA, Adobe Suite"
+  },
+  {
+    "objectID": "resume.html#professional-experience",
+    "href": "resume.html#professional-experience",
+    "title": "Resume",
+    "section": "",
+    "text": "June 2023 - Sept 2023 | San Antonio, TX\n\nDeveloped a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE\nEnhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model\nAutomated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts\n\n\n\n\nJan 2023 - Present | Rexburg, ID\n\nCollaborated with team of 3 in developing the front and back ends of the new Maclab website and 3D printing queue\nConducted interviews, reviewed resumes to screen candidates, and provided training to new employees\nFacilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team\nDesigned interactive dashboards to track KPI performance, resulting in a 14% average improvement across all metrics\n\n\n\n\nApril 2024 - Present | Rexburg, ID\n\nServed as a teaching assistant for “Intro to Programming,” “Data Wrangling and Visualization,” and “Math for the Real World”\nLed group and one-on-one tutoring sessions focused on Python, R, Excel, and arithmetic\nProvided general data science support at the Data Science Tutoring Lab, assisting students across various data science courses\n\n\n\n\nSept 2023 - Dec 2023 | Salida, CA\n\nOptimized database design by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime\nIdentified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency\nDeveloped a CRM using a PHP framework, enhancing location data tracking and streamlining communication between salesmen and delivery drivers for improved logistics"
+  },
+  {
+    "objectID": "posts/2024-01-16-machine-learning-forecast/index.html",
+    "href": "posts/2024-01-16-machine-learning-forecast/index.html",
+    "title": "Building a Sales Forecasting Model",
+    "section": "",
+    "text": "During my internship at PIC Business Systems, I had the opportunity to develop a sales forecasting model that improved prediction accuracy by 30%. Here’s how I approached it."
+  },
+  {
+    "objectID": "posts/2024-01-16-machine-learning-forecast/index.html#the-challenge",
+    "href": "posts/2024-01-16-machine-learning-forecast/index.html#the-challenge",
+    "title": "Building a Sales Forecasting Model",
+    "section": "The Challenge",
+    "text": "The Challenge\nAccurately predicting sales for the next 90 days was crucial for inventory management and business planning. The existing system relied heavily on manual predictions and didn’t account for external factors."
+  },
+  {
+    "objectID": "posts/2024-01-16-machine-learning-forecast/index.html#the-solution",
+    "href": "posts/2024-01-16-machine-learning-forecast/index.html#the-solution",
+    "title": "Building a Sales Forecasting Model",
+    "section": "The Solution",
+    "text": "The Solution\nI developed an ensemble model that combined: - XGBoost - Prophet - SARIMA\nThe model incorporated external factors like: - Weather patterns - Seasonal trends - Historical sales data - Market indicators\n[Continue reading for more technical details…]"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "About this site"
+    "text": "I’m currently pursuing my BS in Data Science at BYU-Idaho, with a minor in Accounting and a Machine Learning Certificate. My journey in tech has been driven by a fascination with turning complex data into meaningful insights. I believe that by learning accounting, the language of business, I will be able to learn even more from data.\n\n\nAs a Machine Learning Engineer and Developer, I love tackling challenges that combine data science with practical applications. Whether it’s developing sales forecasting models or optimizing database performance, I enjoy seeing how data can drive real business impact.\n\n\n\nAt BYU-Idaho, I serve as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab. I get to combine my technical skills with leadership, whether I’m helping students grasp programming concepts or leading development projects.\n\n\n\nWhen I am not working with data, I love to spend time with my wife and our adopted cat George, a stray we found as a kitten in a California warehouse. I am a huge sports fan and root for all the Arizona-based sports teams even though I’m from San Antonio, TX. I became a fan through my mom, who grew up in Arizona. Some other hobbies of mine are 3d printing, history, and sci-fi.\n\n\n\nConnect with me on LinkedIn!"
+  },
+  {
+    "objectID": "about.html#what-im-passionate-about",
+    "href": "about.html#what-im-passionate-about",
+    "title": "About Me",
+    "section": "",
+    "text": "As a Machine Learning Engineer and Developer, I love tackling challenges that combine data science with practical applications. Whether it’s developing sales forecasting models or optimizing database performance, I enjoy seeing how data can drive real business impact."
+  },
+  {
+    "objectID": "about.html#current-role",
+    "href": "about.html#current-role",
+    "title": "About Me",
+    "section": "",
+    "text": "At BYU-Idaho, I serve as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab. I get to combine my technical skills with leadership, whether I’m helping students grasp programming concepts or leading development projects."
+  },
+  {
+    "objectID": "about.html#beyond-the-code",
+    "href": "about.html#beyond-the-code",
+    "title": "About Me",
+    "section": "",
+    "text": "When I am not working with data, I love to spend time with my wife and our adopted cat George, a stray we found as a kitten in a California warehouse. I am a huge sports fan and root for all the Arizona-based sports teams even though I’m from San Antonio, TX. I became a fan through my mom, who grew up in Arizona. Some other hobbies of mine are 3d printing, history, and sci-fi."
+  },
+  {
+    "objectID": "about.html#connect-me",
+    "href": "about.html#connect-me",
+    "title": "About Me",
+    "section": "",
+    "text": "Connect with me on LinkedIn!"
   }
 ]

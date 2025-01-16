@@ -1,0 +1,57 @@
+---
+title: "Resume"
+---
+
+# Tyler Lowry
+tjlowry02@gmail.com | [LinkedIn](https://linkedin.com/in/tylerj-lowry)
+
+## Education
+
+**Brigham Young University-Idaho** | Rexburg, ID  
+BS, Data Science - Accounting Minor - Machine Learning Certificate  
+Expected Graduation: April 2025  
+GPA: 3.86  
+- Member of Data Science Society
+
+## Skills
+
+### Advanced
+- R, Python, Pandas, Polars, SQL
+- Machine Learning, Demand Forecasting, TensorFlow, Scikit-Learn
+- Tableau, Power BI
+
+### Competent
+- HTML, CSS, JavaScript, PHP, PySpark
+- APIs, Data Pipelines
+- Excel, VBA, Adobe Suite
+
+## Professional Experience
+
+### Machine Learning Engineer Intern | PIC Business Systems
+*June 2023 - Sept 2023* | San Antonio, TX
+
+- Developed a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE
+- Enhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model
+- Automated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts
+
+### Team Lead/Developer | BYU-Idaho McKay Maclab
+*Jan 2023 - Present* | Rexburg, ID
+
+- Collaborated with team of 3 in developing the front and back ends of the new Maclab website and 3D printing queue
+- Conducted interviews, reviewed resumes to screen candidates, and provided training to new employees
+- Facilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team
+- Designed interactive dashboards to track KPI performance, resulting in a 14% average improvement across all metrics
+
+### TA/Tutor | BYU-Idaho
+*April 2024 - Present* | Rexburg, ID
+
+- Served as a teaching assistant for "Intro to Programming," "Data Wrangling and Visualization," and "Math for the Real World"
+- Led group and one-on-one tutoring sessions focused on Python, R, Excel, and arithmetic
+- Provided general data science support at the Data Science Tutoring Lab, assisting students across various data science courses
+
+### Intern | George W. Lowry Inc.
+*Sept 2023 - Dec 2023* | Salida, CA
+
+- Optimized database design by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime
+- Identified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency
+- Developed a CRM using a PHP framework, enhancing location data tracking and streamlining communication between salesmen and delivery drivers for improved logistics

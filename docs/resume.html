@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Blog – website</title>
+<title>Resume – website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,65 +66,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -157,11 +97,11 @@ window.Quarto = {
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html"> 
+    <a class="nav-link active" href="./resume.html" aria-current="page"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">Data Science Blog</span></a>
   </li>  
 </ul>
@@ -188,14 +128,35 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Projects">Projects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tyler-lowry" id="toc-tyler-lowry" class="nav-link active" data-scroll-target="#tyler-lowry">Tyler Lowry</a>
+  <ul class="collapse">
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a>
+  <ul class="collapse">
+  <li><a href="#advanced" id="toc-advanced" class="nav-link" data-scroll-target="#advanced">Advanced</a></li>
+  <li><a href="#competent" id="toc-competent" class="nav-link" data-scroll-target="#competent">Competent</a></li>
+  </ul></li>
+  <li><a href="#professional-experience" id="toc-professional-experience" class="nav-link" data-scroll-target="#professional-experience">Professional Experience</a>
+  <ul class="collapse">
+  <li><a href="#machine-learning-engineer-intern-pic-business-systems" id="toc-machine-learning-engineer-intern-pic-business-systems" class="nav-link" data-scroll-target="#machine-learning-engineer-intern-pic-business-systems">Machine Learning Engineer Intern | PIC Business Systems</a></li>
+  <li><a href="#team-leaddeveloper-byu-idaho-mckay-maclab" id="toc-team-leaddeveloper-byu-idaho-mckay-maclab" class="nav-link" data-scroll-target="#team-leaddeveloper-byu-idaho-mckay-maclab">Team Lead/Developer | BYU-Idaho McKay Maclab</a></li>
+  <li><a href="#tatutor-byu-idaho" id="toc-tatutor-byu-idaho" class="nav-link" data-scroll-target="#tatutor-byu-idaho">TA/Tutor | BYU-Idaho</a></li>
+  <li><a href="#intern-george-w.-lowry-inc." id="toc-intern-george-w.-lowry-inc." class="nav-link" data-scroll-target="#intern-george-w.-lowry-inc.">Intern | George W. Lowry Inc.</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Science Blog</h1>
+<h1 class="title">Resume</h1>
 </div>
 
 
@@ -212,53 +173,81 @@ window.Quarto = {
 </header>
 
 
+<section id="tyler-lowry" class="level1">
+<h1>Tyler Lowry</h1>
+<p>tjlowry02@gmail.com | <a href="https://linkedin.com/in/tylerj-lowry">LinkedIn</a></p>
+<section id="education" class="level2">
+<h2 class="anchored" data-anchor-id="education">Education</h2>
+<p><strong>Brigham Young University-Idaho</strong> | Rexburg, ID<br>
+BS, Data Science - Accounting Minor - Machine Learning Certificate<br>
+Expected Graduation: April 2025<br>
+GPA: 3.86<br>
+- Member of Data Science Society</p>
+</section>
+<section id="skills" class="level2">
+<h2 class="anchored" data-anchor-id="skills">Skills</h2>
+<section id="advanced" class="level3">
+<h3 class="anchored" data-anchor-id="advanced">Advanced</h3>
+<ul>
+<li>R, Python, Pandas, Polars, SQL</li>
+<li>Machine Learning, Demand Forecasting, TensorFlow, Scikit-Learn</li>
+<li>Tableau, Power BI</li>
+</ul>
+</section>
+<section id="competent" class="level3">
+<h3 class="anchored" data-anchor-id="competent">Competent</h3>
+<ul>
+<li>HTML, CSS, JavaScript, PHP, PySpark</li>
+<li>APIs, Data Pipelines</li>
+<li>Excel, VBA, Adobe Suite</li>
+</ul>
+</section>
+</section>
+<section id="professional-experience" class="level2">
+<h2 class="anchored" data-anchor-id="professional-experience">Professional Experience</h2>
+<section id="machine-learning-engineer-intern-pic-business-systems" class="level3">
+<h3 class="anchored" data-anchor-id="machine-learning-engineer-intern-pic-business-systems">Machine Learning Engineer Intern | PIC Business Systems</h3>
+<p><em>June 2023 - Sept 2023</em> | San Antonio, TX</p>
+<ul>
+<li>Developed a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE</li>
+<li>Enhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model</li>
+<li>Automated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts</li>
+</ul>
+</section>
+<section id="team-leaddeveloper-byu-idaho-mckay-maclab" class="level3">
+<h3 class="anchored" data-anchor-id="team-leaddeveloper-byu-idaho-mckay-maclab">Team Lead/Developer | BYU-Idaho McKay Maclab</h3>
+<p><em>Jan 2023 - Present</em> | Rexburg, ID</p>
+<ul>
+<li>Collaborated with team of 3 in developing the front and back ends of the new Maclab website and 3D printing queue</li>
+<li>Conducted interviews, reviewed resumes to screen candidates, and provided training to new employees</li>
+<li>Facilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team</li>
+<li>Designed interactive dashboards to track KPI performance, resulting in a 14% average improvement across all metrics</li>
+</ul>
+</section>
+<section id="tatutor-byu-idaho" class="level3">
+<h3 class="anchored" data-anchor-id="tatutor-byu-idaho">TA/Tutor | BYU-Idaho</h3>
+<p><em>April 2024 - Present</em> | Rexburg, ID</p>
+<ul>
+<li>Served as a teaching assistant for “Intro to Programming,” “Data Wrangling and Visualization,” and “Math for the Real World”</li>
+<li>Led group and one-on-one tutoring sessions focused on Python, R, Excel, and arithmetic</li>
+<li>Provided general data science support at the Data Science Tutoring Lab, assisting students across various data science courses</li>
+</ul>
+</section>
+<section id="intern-george-w.-lowry-inc." class="level3">
+<h3 class="anchored" data-anchor-id="intern-george-w.-lowry-inc.">Intern | George W. Lowry Inc.</h3>
+<p><em>Sept 2023 - Dec 2023</em> | Salida, CA</p>
+<ul>
+<li>Optimized database design by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime</li>
+<li>Identified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency</li>
+<li>Developed a CRM using a PHP framework, enhancing location data tracking and streamlining communication between salesmen and delivery drivers for improved logistics</li>
+</ul>
 
 
+</section>
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Python,Projects" data-listing-date-sort="1705388400000" data-listing-file-modified-sort="1737047109598" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="87">
-<a href="./posts/2024-01-16-machine-learning-forecast/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2024-01-16-machine-learning-forecast/forecast-image.svg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Building a Sales Forecasting Model
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
-Machine Learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Projects'); return false;">
-Projects
-</div>
-</div>
-<div class="card-text listing-description">
-How I developed a 90-day sales forecasting model using machine learning
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Tyler Lowry
-</div>
-<div class="listing-date">
-Jan 16, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
