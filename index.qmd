@@ -39,7 +39,7 @@ I'm a Data Science student at BYU-Idaho passionate about turning data into actio
 - Database Design & Architecture
 
 ### Web Development
-- PHP (Filament)
+- PHP (Filament), C#
 - JavaScript/TypeScript
 - HTML/CSS
 :::
