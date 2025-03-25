@@ -1,29 +1,41 @@
----
-title: "Building a Sales Forecasting Model"
-description: "How I developed a 90-day sales forecasting model using machine learning"
-author: "Tyler Lowry"
-date: "2024-01-16"
-categories: [Machine Learning, Python, Projects]
-image: forecast-image.svg
----
+# Time Series Forecasting: Uncovering Patterns in Your Data
 
-During my internship at PIC Business Systems, I had the opportunity to develop a sales forecasting model that improved prediction accuracy by 30%. Here's how I approached it.
+Time series forecasting is a fascinating part of data science and machine learning. I first encountered it during a machine learning course where we briefly covered various models and techniques like classification, regression, random forests, LSTMs, CNNs, and gradient boosted models. In that class I was tasked with predicting bike sales. When I mentioned what I was learning to a family member, they asked if these techniques could be applied to demand forecasting in the context of their specific business. I thought it couldnt too different from what I did in class, and said yes. I quickly discovered the depth and complexity of time series forecasting was so much greater then what I had thought before.
 
-## The Challenge
+## Before You Start Coding
 
-Accurately predicting sales for the next 90 days was crucial for inventory management and business planning. The existing system relied heavily on manual predictions and didn't account for external factors.
+The MOST important step when approaching time series forecasting is researching the domain your data comes from. If you're working with sales data from a janitorial products warehouse, take time to understand that industry. Talk to people working in it to discover the key factors driving their sales. This domain knowledge will be invaluable as you build your models and interpret results.
 
-## The Solution
+## The Basics
 
-I developed an ensemble model that combined:
-- XGBoost
-- Prophet
-- SARIMA
+What exactly is time series forecasting? Life is full of patterns - we find them in nature, buildings, and data. Time series forecasting extracts patterns from historical data to predict future outcomes. The defining characteristic is the time element: measurements recorded at consistent intervals, whether minutes, hours, days, weeks, or months. Consistency is crucial - if your data sometimes uses daily measurements and other times weekly, you must standardize to a single time unit before analysis.
 
-The model incorporated external factors like:
-- Weather patterns
-- Seasonal trends
-- Historical sales data
-- Market indicators
+## Extracting the Patterns
 
-[Continue reading for more technical details...]
+Once your data is properly structured with consistent time intervals, you can begin identifying patterns and sepearating the data into its different compenents through a process called decomposition. Time series data typically contains four main components:
+
+### Trend
+The long-term progression of your series - whether values are generally increasing, decreasing, or remaining stable over time. Trends represent the underlying direction of your data.
+
+### Seasonality
+Repeating patterns that occur at regular intervals. These might be daily, weekly, monthly, or yearly cycles depending on your data. Holiday shopping spikes in retail or specific times of yar being know for having more storms are examples of seasonality.
+
+### Cyclicity
+Longer-term patterns that don't have a fixed frequency. Economic cycles that affect business performance over several years are a classic example, where boom and bust periods create waves in the data.
+
+### Residual (Noise)
+The random variation remaining after accounting for trend, seasonality, and cyclicity. This represents unpredictable fluctuations that can't be explained by the model.
+
+These components combine (either additively or multiplicatively) to create the overall time series pattern.
+
+## Understanding the Patterns
+
+After decomposing your time series, you can use this information to make better predictions. Trends and seasonal patterns often become very noticeable - perhaps sales peak annually during the holiday season or just before school starts.
+
+This is why domain knowledge is so critical. Understanding external factors like natural disasters, company sales strategies, or market conditions helps explain outliers, spikes, or dips that might otherwise confuse your model. Without this context, you risk misinterpreting the data or making incorrect forecasts.
+
+When you combine solid statistical techniques with domain understanding, time series forecasting becomes a powerful tool for business planning, resource usage, and strategic decision-making.
+
+## Looking Ahead
+
+In this post I introduced some of the foundational ideas of time series forecasting, like what it is and what parts up make up a time series. I will be making additional posts that go more indepth about the application of these ideas and other concepts crucial to time series forecasting.
