@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -132,18 +161,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#time-series-forecasting-uncovering-patterns-in-your-data" id="toc-time-series-forecasting-uncovering-patterns-in-your-data" class="nav-link active" data-scroll-target="#time-series-forecasting-uncovering-patterns-in-your-data">Time Series Forecasting: Uncovering Patterns in Your Data</a>
+  <li><a href="#time-series-forecasting-understanding-the-components" id="toc-time-series-forecasting-understanding-the-components" class="nav-link active" data-scroll-target="#time-series-forecasting-understanding-the-components">Time Series Forecasting: Understanding the Components</a>
   <ul class="collapse">
-  <li><a href="#before-you-start-coding" id="toc-before-you-start-coding" class="nav-link" data-scroll-target="#before-you-start-coding">Before You Start Coding</a></li>
-  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The Basics</a></li>
-  <li><a href="#extracting-the-patterns" id="toc-extracting-the-patterns" class="nav-link" data-scroll-target="#extracting-the-patterns">Extracting the Patterns</a>
+  <li><a href="#what-exactly-is-time-series-forecasting" id="toc-what-exactly-is-time-series-forecasting" class="nav-link" data-scroll-target="#what-exactly-is-time-series-forecasting">What Exactly is Time Series Forecasting?</a></li>
+  <li><a href="#understanding-time-series-components" id="toc-understanding-time-series-components" class="nav-link" data-scroll-target="#understanding-time-series-components">Understanding Time Series Components</a>
   <ul class="collapse">
-  <li><a href="#trend" id="toc-trend" class="nav-link" data-scroll-target="#trend">Trend</a></li>
-  <li><a href="#seasonality" id="toc-seasonality" class="nav-link" data-scroll-target="#seasonality">Seasonality</a></li>
-  <li><a href="#cyclicity" id="toc-cyclicity" class="nav-link" data-scroll-target="#cyclicity">Cyclicity</a></li>
-  <li><a href="#residual-noise" id="toc-residual-noise" class="nav-link" data-scroll-target="#residual-noise">Residual (Noise)</a></li>
+  <li><a href="#trend-component" id="toc-trend-component" class="nav-link" data-scroll-target="#trend-component">Trend Component</a></li>
+  <li><a href="#seasonality-component" id="toc-seasonality-component" class="nav-link" data-scroll-target="#seasonality-component">Seasonality Component</a></li>
+  <li><a href="#cyclicity-component" id="toc-cyclicity-component" class="nav-link" data-scroll-target="#cyclicity-component">Cyclicity Component</a></li>
+  <li><a href="#residual-noise-component" id="toc-residual-noise-component" class="nav-link" data-scroll-target="#residual-noise-component">Residual (Noise) Component</a></li>
   </ul></li>
-  <li><a href="#understanding-the-patterns" id="toc-understanding-the-patterns" class="nav-link" data-scroll-target="#understanding-the-patterns">Understanding the Patterns</a></li>
+  <li><a href="#decomposing-a-time-series" id="toc-decomposing-a-time-series" class="nav-link" data-scroll-target="#decomposing-a-time-series">Decomposing a Time Series</a></li>
+  <li><a href="#additive-vs.-multiplicative-decomposition" id="toc-additive-vs.-multiplicative-decomposition" class="nav-link" data-scroll-target="#additive-vs.-multiplicative-decomposition">Additive vs.&nbsp;Multiplicative Decomposition</a>
+  <ul class="collapse">
+  <li><a href="#additive-model" id="toc-additive-model" class="nav-link" data-scroll-target="#additive-model">Additive Model</a></li>
+  <li><a href="#multiplicative-model" id="toc-multiplicative-model" class="nav-link" data-scroll-target="#multiplicative-model">Multiplicative Model</a></li>
+  </ul></li>
+  <li><a href="#the-critical-role-of-domain-knowledge" id="toc-the-critical-role-of-domain-knowledge" class="nav-link" data-scroll-target="#the-critical-role-of-domain-knowledge">The Critical Role of Domain Knowledge</a></li>
+  <li><a href="#real-world-complications" id="toc-real-world-complications" class="nav-link" data-scroll-target="#real-world-complications">Real-World Complications</a></li>
   <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul></li>
   </ul>
@@ -155,47 +190,140 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="time-series-forecasting-uncovering-patterns-in-your-data" class="level1">
-<h1>Time Series Forecasting: Uncovering Patterns in Your Data</h1>
-<p>Time series forecasting is a fascinating part of data science and machine learning. I first encountered it during a machine learning course where we briefly covered various models and techniques like classification, regression, random forests, LSTMs, CNNs, and gradient boosted models. In that class I was tasked with predicting bike sales. When I mentioned what I was learning to a family member, they asked if these techniques could be applied to demand forecasting in the context of their specific business. I thought it couldnt too different from what I did in class, and said yes. I quickly discovered the depth and complexity of time series forecasting was so much greater then what I had thought before.</p>
-<section id="before-you-start-coding" class="level2">
-<h2 class="anchored" data-anchor-id="before-you-start-coding">Before You Start Coding</h2>
+<section id="time-series-forecasting-understanding-the-components" class="level1">
+<h1>Time Series Forecasting: Understanding the Components</h1>
+<p>Time series forecasting is a fascinating part of data science and machine learning. I first encountered it during a machine learning course where we briefly covered various models and techniques like classification, regression, random forests, LSTMs, CNNs, and gradient boosted models. In that class I was tasked with predicting bike sales. When I mentioned what I was learning to a family member, they asked if these techniques could be applied to demand forecasting in the context of their specific business. I thought it couldn’t be too different from what I did in class, and said yes. I quickly discovered the depth and complexity of time series forecasting was so much greater than what I had thought before.</p>
+<p>For this post, I’ve use python to create several fake datasets to clearly demonstrate time series concepts without the noise and complexity of real-world data. While synthetic, these examples reflect patterns commonly found in actual time series data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="additive_series_plot.png" class="img-fluid figure-img"></p>
+<figcaption>Complete Series Example</figcaption>
+</figure>
+</div>
+<p>This visualization shows a synthetic time series with trend, seasonality, and random variations. Even in this simplified example, we can observe several key characteristics of time series data:</p>
+<ul>
+<li>A clear upward trend over time</li>
+<li>Regular seasonal patterns that repeat at fixed intervals</li>
+<li>Random variations that create “noise” around these patterns</li>
+</ul>
+<section id="what-exactly-is-time-series-forecasting" class="level2">
+<h2 class="anchored" data-anchor-id="what-exactly-is-time-series-forecasting">What Exactly is Time Series Forecasting?</h2>
+<p>Time series forecasting is the process of analyzing historical time-ordered data to predict future values. Unlike other types of predictive modeling, time series forecasting explicitly accounts for the temporal ordering and relationships in the data.</p>
+<p>Life is full of patterns - we find them in nature, buildings, and data. Time series forecasting extracts these patterns from historical data to predict future outcomes. The defining characteristic is the time element: measurements recorded at consistent intervals, whether minutes, hours, days, weeks, or months. Consistency is crucial - if your data sometimes uses daily measurements and other times weekly, you must standardize to a single time unit before analysis.</p>
+</section>
+<section id="understanding-time-series-components" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-time-series-components">Understanding Time Series Components</h2>
+<p>Before you can effectively forecast a time series, you need to understand its components. Most time series can be broken down into four primary components:</p>
+<section id="trend-component" class="level3">
+<h3 class="anchored" data-anchor-id="trend-component">Trend Component</h3>
+<p>The trend represents the long-term progression of your series - whether values are generally increasing, decreasing, or remaining stable over time. As shown in Figure 2, trends can take many forms.</p>
+<p>Identifying the correct trend pattern is crucial for making accurate long-term forecasts.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="trend_patterns.png" class="img-fluid figure-img"></p>
+<figcaption>Trend Patterns</figcaption>
+</figure>
+</div>
+</section>
+<section id="seasonality-component" class="level3">
+<h3 class="anchored" data-anchor-id="seasonality-component">Seasonality Component</h3>
+<p>Seasonality refers to repeating patterns that occur at regular intervals. As shown in Figure 3, these patterns can vary widely:</p>
+<ul>
+<li>Annual patterns (think retail sales peaking during holidays)</li>
+<li>Quarterly patterns (often seen in financial data)</li>
+<li>Monthly, weekly, or daily cycles</li>
+<li>Irregular but predictable peaks (like special events)</li>
+<li>Multiple overlapping seasonal patterns</li>
+</ul>
+<p>In retail data, for example, you might see weekly patterns (higher sales on weekends) overlaid with annual patterns (holiday shopping seasons).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="seasonality_patterns.png" class="img-fluid figure-img"></p>
+<figcaption>Seasonality Patterns</figcaption>
+</figure>
+</div>
+</section>
+<section id="cyclicity-component" class="level3">
+<h3 class="anchored" data-anchor-id="cyclicity-component">Cyclicity Component</h3>
+<p>Cyclical patterns are longer-term fluctuations that don’t have a fixed frequency, unlike seasonality. Business cycles that affect performance over several years are a classic example, where boom and bust periods create waves in the data.</p>
+</section>
+<section id="residual-noise-component" class="level3">
+<h3 class="anchored" data-anchor-id="residual-noise-component">Residual (Noise) Component</h3>
+<p>After accounting for trend, seasonality, and cyclicity, what remains is the residual or noise component. This represents random, unpredictable variations that can’t be explained by the model. While true randomness can never be predicted, analyzing this component can provide insights into the volatility of your data and the reliability of your forecasts.</p>
+</section>
+</section>
+<section id="decomposing-a-time-series" class="level2">
+<h2 class="anchored" data-anchor-id="decomposing-a-time-series">Decomposing a Time Series</h2>
+<p>Time series decomposition is the process of separating a time series into its component parts. This helps us understand the underlying patterns driving our data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="standard_decomposition.png" class="img-fluid figure-img"></p>
+<figcaption>Standard Decomposition</figcaption>
+</figure>
+</div>
+<p>In Figure 5, we can see a time series broken down into its components: - The observed data (top panel) - The extracted trend (second panel) - The seasonal pattern (third panel) - The residual noise (bottom panel)</p>
+<p>This decomposition follows an additive model, represented by the formula:</p>
+<p><span class="math display">\[Y_t = T_t + S_t + C_t + R_t\]</span></p>
+<p>Where: - <span class="math inline">\(Y_t\)</span> is the observed value at time <span class="math inline">\(t\)</span> <br> - <span class="math inline">\(T_t\)</span> is the trend component<br> - <span class="math inline">\(S_t\)</span> is the seasonal component<br> - <span class="math inline">\(C_t\)</span> is the cyclical component<br> - <span class="math inline">\(R_t\)</span> is the residual (noise) component<br></p>
+</section>
+<section id="additive-vs.-multiplicative-decomposition" class="level2">
+<h2 class="anchored" data-anchor-id="additive-vs.-multiplicative-decomposition">Additive vs.&nbsp;Multiplicative Decomposition</h2>
+<p>There are two main approaches to time series decomposition: additive and multiplicative.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="additive_vs_multiplicative.png" class="img-fluid figure-img"></p>
+<figcaption>Additive vs Multiplicative Series</figcaption>
+</figure>
+</div>
+<section id="additive-model" class="level3">
+<h3 class="anchored" data-anchor-id="additive-model">Additive Model</h3>
+<p>In an additive model, the components are added together to form the original series:</p>
+<p><span class="math display">\[Y_t = T_t + S_t + C_t + R_t\]</span></p>
+<p>This model is appropriate when:<br> - The seasonal variations add a fixed amount regardless of the trend level<br> - For example, ice cream sales might consistently increase by exactly 1,000 units during summer months, whether your baseline is 3,000 or 8,000 units<br> - The data can have negative values (since multiplication by negative values can produce counterintuitive results)<br></p>
+<p>In Figure 6 (top panel), you can see that the seasonal variations maintain a consistent amplitude regardless of the trend level.</p>
+</section>
+<section id="multiplicative-model" class="level3">
+<h3 class="anchored" data-anchor-id="multiplicative-model">Multiplicative Model</h3>
+<p>In a multiplicative model, the components are multiplied together:</p>
+<p><span class="math display">\[Y_t = T_t \times S_t \times C_t \times R_t\]</span></p>
+<p>This model is appropriate when:<br> - The seasonal variations represent a percentage of the trend level<br> - For example, retail sales might increase by 40% during December, meaning a much larger absolute increase when baseline sales are higher<br> - The data must be positive (since multiplication by zero or negative values distorts the pattern)<br></p>
+<p>In Figure 6 (bottom panel), note how the seasonal variations grow larger as the trend increases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="multiplicative_decomposition_example.png" class="img-fluid figure-img"></p>
+<figcaption>Multiplicative Decomposition</figcaption>
+</figure>
+</div>
+<p>Figure 7 shows the decomposition of a multiplicative series. Notice how the seasonal component is expressed as a ratio (values around 1.0) rather than absolute values.</p>
+</section>
+</section>
+<section id="the-critical-role-of-domain-knowledge" class="level2">
+<h2 class="anchored" data-anchor-id="the-critical-role-of-domain-knowledge">The Critical Role of Domain Knowledge</h2>
 <p>The MOST important step when approaching time series forecasting is researching the domain your data comes from. If you’re working with sales data from a janitorial products warehouse, take time to understand that industry. Talk to people working in it to discover the key factors driving their sales. This domain knowledge will be invaluable as you build your models and interpret results.</p>
+<p>Domain knowledge helps you:</p>
+<ol type="1">
+<li><strong>Identify expected patterns</strong> - Industry experts can tell you about normal seasonal fluctuations</li>
+<li><strong>Explain anomalies</strong> - That unexplained spike might be due to a one-time event</li>
+<li><strong>Understand structural changes</strong> - A sudden shift in the data might be explained by a change in business strategy or market conditions</li>
+<li><strong>Select appropriate models</strong> - Different types of data require different modeling approaches</li>
+</ol>
+<p>Without domain context, you risk misinterpreting the data or making incorrect forecasts. When you combine solid statistical techniques with domain understanding, time series forecasting becomes a powerful tool for business planning, resource usage, and strategic decision-making.</p>
 </section>
-<section id="the-basics" class="level2">
-<h2 class="anchored" data-anchor-id="the-basics">The Basics</h2>
-<p>What exactly is time series forecasting? Life is full of patterns - we find them in nature, buildings, and data. Time series forecasting extracts patterns from historical data to predict future outcomes. The defining characteristic is the time element: measurements recorded at consistent intervals, whether minutes, hours, days, weeks, or months. Consistency is crucial - if your data sometimes uses daily measurements and other times weekly, you must standardize to a single time unit before analysis.</p>
-</section>
-<section id="extracting-the-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="extracting-the-patterns">Extracting the Patterns</h2>
-<p>Once your data is properly structured with consistent time intervals, you can begin identifying patterns and sepearating the data into its different compenents through a process called decomposition. Time series data typically contains four main components:</p>
-<section id="trend" class="level3">
-<h3 class="anchored" data-anchor-id="trend">Trend</h3>
-<p>The long-term progression of your series - whether values are generally increasing, decreasing, or remaining stable over time. Trends represent the underlying direction of your data.</p>
-</section>
-<section id="seasonality" class="level3">
-<h3 class="anchored" data-anchor-id="seasonality">Seasonality</h3>
-<p>Repeating patterns that occur at regular intervals. These might be daily, weekly, monthly, or yearly cycles depending on your data. Holiday shopping spikes in retail or specific times of yar being know for having more storms are examples of seasonality.</p>
-</section>
-<section id="cyclicity" class="level3">
-<h3 class="anchored" data-anchor-id="cyclicity">Cyclicity</h3>
-<p>Longer-term patterns that don’t have a fixed frequency. Economic cycles that affect business performance over several years are a classic example, where boom and bust periods create waves in the data.</p>
-</section>
-<section id="residual-noise" class="level3">
-<h3 class="anchored" data-anchor-id="residual-noise">Residual (Noise)</h3>
-<p>The random variation remaining after accounting for trend, seasonality, and cyclicity. This represents unpredictable fluctuations that can’t be explained by the model.</p>
-<p>These components combine (either additively or multiplicatively) to create the overall time series pattern.</p>
-</section>
-</section>
-<section id="understanding-the-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-the-patterns">Understanding the Patterns</h2>
-<p>After decomposing your time series, you can use this information to make better predictions. Trends and seasonal patterns often become very noticeable - perhaps sales peak annually during the holiday season or just before school starts.</p>
-<p>This is why domain knowledge is so critical. Understanding external factors like natural disasters, company sales strategies, or market conditions helps explain outliers, spikes, or dips that might otherwise confuse your model. Without this context, you risk misinterpreting the data or making incorrect forecasts.</p>
-<p>When you combine solid statistical techniques with domain understanding, time series forecasting becomes a powerful tool for business planning, resource usage, and strategic decision-making.</p>
+<section id="real-world-complications" class="level2">
+<h2 class="anchored" data-anchor-id="real-world-complications">Real-World Complications</h2>
+<p>In practice, time series data is rarely as clean as our simple decomposition models suggest. Figure 4 highlights several real-world complications:</p>
+<ul>
+<li><strong>Outliers</strong>: Unusual events can create extreme values (shown in the middle-right panel)</li>
+<li><strong>Missing values</strong>: Data collection issues can lead to gaps in your time series</li>
+<li><strong>Level shifts</strong>: Structural changes can cause permanent shifts in the level of your data</li>
+<li><strong>Heteroscedasticity</strong>: The variance of your data might change over time, making some periods more volatile than others</li>
+</ul>
+<p>Addressing these complications is an important part of time series forecasting, and will be covered in future posts.</p>
 </section>
 <section id="looking-ahead" class="level2">
 <h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
-<p>In this post I introduced some of the foundational ideas of time series forecasting, like what it is and what parts up make up a time series. I will be making additional posts that go more indepth about the application of these ideas and other concepts crucial to time series forecasting.</p>
+<p>In this post I introduced the foundational concepts of time series forecasting, including the components that make up a time series and the different approaches to decomposition. Understanding these concepts is crucial before diving into the practical implementation of forecasting models.</p>
+<p>In my next post, I’ll explore how to implement these concepts in code, working with real-world datasets to build and evaluate forecasting models.</p>
 
 
 </section>
