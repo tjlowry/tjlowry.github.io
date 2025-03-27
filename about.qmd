@@ -1,23 +1,7 @@
 ---
-title: "About Me"
+title: "Projects"
 ---
 
-# My Journey
+# My Projects
 
-I'm currently pursuing my BS in Data Science at BYU-Idaho, with a minor in Accounting and a Machine Learning Certificate. My journey in tech has been driven by a fascination with turning complex data into meaningful insights. I believe that by learning accounting, the language of business, I will be able to learn even more from data.
-
-## What I'm Passionate About
-
-As a Machine Learning Engineer and Developer, I love tackling challenges that combine data science with practical applications. Whether it's developing sales forecasting models or optimizing database performance, I enjoy seeing how data can drive real business impact.
-
-## Current Role
-
-At BYU-Idaho, I serve as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab. I get to combine my technical skills with leadership, whether I'm helping students grasp programming concepts or leading development projects.
-
-## Beyond the Code
-
-When I am not working with data, I love to spend time with my wife and our adopted cat George, a stray we found as a kitten in a California warehouse. I am a huge sports fan and root for all the Arizona-based sports teams even though I'm from San Antonio, TX. I became a fan through my mom, who grew up in Arizona. Some other hobbies of mine are 3d printing, history, and sci-fi.
-
-## Connect me
-
-Connect with me on [LinkedIn](https://linkedin.com/in/tylerj-lowry)!
+This page will be updated soon with projects I have worked on.

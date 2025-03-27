@@ -2,18 +2,20 @@
 title: "Tyler Lowry"
 ---
 
+# DATA SCIENTIST
+
 :::{.columns .gx-5}
-
 :::{.column width="60%" .px-4}
-# Data Scienctist
+I'm a Data Science student at BYU-Idaho passionate about turning complex data into actionable insights. With a minor in Accounting and a Machine Learning Certificate, I hope to bridge the gap between business and statistics.
 
-I'm a Data Science student at BYU-Idaho passionate about turning data into actionable insights. I love exploring the intersection of technology and problem-solving, whether that's through machine learning, data visualization, or full-stack development.
+At BYU-Idaho, I serve as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab, which has strengthened my skills in programming, statistics, and leadership.
+
+After graduating in April 2025, I'll be continuing my education at Texas A&M for a Master's in Statistical Data Science.
 :::
 
 :::{.column width="40%" .px-4}
 ![](profile_pic.jpeg)
 :::
-
 :::
 
 ## Skills
@@ -44,3 +46,6 @@ I'm a Data Science student at BYU-Idaho passionate about turning data into actio
 - HTML/CSS
 :::
 :::
+
+## Featured Projects
+- Check out my Projects page for a showcase of my recent work
