@@ -1,0 +1,88 @@
+# Boosting Forecast Accuracy Through Model Ensembling
+
+One of the most helpful concepts I have found while learning about time series forecasting is 'ensembling' models. This is the process of combining the predictions of two models and averaging them out somehow.
+
+## Why Ensemble Models?
+
+Different forecasting models capture different aspects of time series data. Statistical models like ARIMA excel at capturing autocorrelation patterns, while machine learning models like LightGBM often better capture complex non-linear relationships. By combining these complementary strengths, we can get the best of both models.
+
+## Simple Weighted Averaging
+
+The most straightforward ensembling approach, and the approach I have been using is weighted averaging. Below is a function I wrote to ensemble the predicitons to a LightGBM and ARIMA model:
+
+```python
+def ensemble_predictions(lgb_predictions, arima_predictions, alpha):
+    """
+    Combine predictions from LightGBM and ARIMA models using a weighted average.
+
+    Args:
+    lgb_predictions (np.array): Array of predictions from the LightGBM model.
+    arima_predictions (np.array): Array of predictions from the ARIMA model.
+    alpha (float): Weighting factor for the LightGBM predictions in the ensemble.
+
+    Returns:
+    np.array: Array of ensemble predictions, combining both models' outputs.
+    """
+
+    ensemble_pred = (
+        alpha * lgb_predictions + (1 - alpha) * arima_predictions
+    )
+    ensemble_pred = np.maximum(ensemble_pred, 0).round()
+    return ensemble_pred
+```
+
+This function:
+1. Takes predictions from both models
+2. Applies a weighting factor `alpha` to control each model's influence
+3. Ensures predictions are non-negative and rounded to integers (important for count data)
+
+The 'alpha' value determines how much weight I want on each. I tested many different and found a weight of 35% arima, 65% LightGBM gave the best results because the LightGBM model tended to overpredict large spikes and dips in the data, and ARIMA was able to smooth it out limiting the impact of the extereme lows and highs.
+
+## Conclusion
+This function is specific to the code I have where I had a set of LightGBM predictions and a set of ARIMA predictions, but it can easily be changed to fit other cicrumstances.
+```python
+def ensemble_predictions(model_predictions, weights=None):
+    """
+    Combine predictions from multiple models using a weighted average.
+
+    Args:
+    model_predictions (list): List of numpy arrays, each containing predictions from different models.
+    weights (list, optional): List of weighting factors for each model. 
+                             If None, equal weights are assigned.
+
+    Returns:
+    np.array: Array of ensemble predictions, combining all models' outputs.
+    """
+    import numpy as np
+    
+    n_models = len(model_predictions)
+    
+    # If weights given, use equal weights
+    if weights is None:
+        weights = [1.0 / n_models] * n_models
+    
+    ensemble_pred = np.zeros_like(model_predictions[0])
+    for i, predictions in enumerate(model_predictions):
+        ensemble_pred += weights[i] * predictions
+    
+    ensemble_pred = np.maximum(ensemble_pred, 0).round()
+    
+    return ensemble_pred
+```
+
+An example of how this could be used is:
+
+```Python
+model1_preds = np.array([100, 105, 110, 115, 120])
+model2_preds = np.array([90, 100, 105, 110, 125])
+model3_preds = np.array([105, 110, 115, 120, 130])
+model4_preds = np.array([95, 105, 108, 112, 118])
+
+# Assign weights
+weights = [0.4, 0.1, 0.3, 0.2]
+ensemble = ensemble_predictions(
+    [model1_preds, model2_preds, model3_preds, model4_preds], 
+    weights=weights
+)
+```
+This would take all 4 models and 40% weight to model 1, 10% to model 2, 30% to model 3, and 20% to model 4. By combining models together it can help reduce the impact of exterme predictions.
