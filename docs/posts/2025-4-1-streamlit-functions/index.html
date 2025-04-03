@@ -166,10 +166,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#boosting-forecast-accuracy-through-model-ensembling" id="toc-boosting-forecast-accuracy-through-model-ensembling" class="nav-link active" data-scroll-target="#boosting-forecast-accuracy-through-model-ensembling">Boosting Forecast Accuracy Through Model Ensembling</a>
+  <li><a href="#organizing-streamlit-dashboards-with-functions" id="toc-organizing-streamlit-dashboards-with-functions" class="nav-link active" data-scroll-target="#organizing-streamlit-dashboards-with-functions">Organizing Streamlit Dashboards with Functions</a>
   <ul class="collapse">
-  <li><a href="#why-ensemble-models" id="toc-why-ensemble-models" class="nav-link" data-scroll-target="#why-ensemble-models">Why Ensemble Models?</a></li>
-  <li><a href="#simple-weighted-averaging" id="toc-simple-weighted-averaging" class="nav-link" data-scroll-target="#simple-weighted-averaging">Simple Weighted Averaging</a></li>
+  <li><a href="#the-function-based-solution" id="toc-the-function-based-solution" class="nav-link" data-scroll-target="#the-function-based-solution">The Function-Based Solution</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   </ul>
@@ -181,86 +180,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="boosting-forecast-accuracy-through-model-ensembling" class="level1">
-<h1>Boosting Forecast Accuracy Through Model Ensembling</h1>
-<p>One of the most helpful concepts I have found while learning about time series forecasting is ‘ensembling’ models. This is the process of combining the predictions of two models and averaging them out somehow.</p>
-<section id="why-ensemble-models" class="level2">
-<h2 class="anchored" data-anchor-id="why-ensemble-models">Why Ensemble Models?</h2>
-<p>Different forecasting models capture different aspects of time series data. Statistical models like ARIMA excel at capturing autocorrelation patterns, while machine learning models like LightGBM often better capture complex non-linear relationships. By combining these complementary strengths, we can get the best of both models.</p>
+<section id="organizing-streamlit-dashboards-with-functions" class="level1">
+<h1>Organizing Streamlit Dashboards with Functions</h1>
+<p>When I first started building my dashboard with Streamlit, it was working out pretty good, however after a while my ‘dashboard.py’ script had turned into a nightmare to edit. It was over 1000 lines of code and trying to find the right parts of the script to edit was becoming a nightmare. I had been coding, but not organizing or structuring it at all.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ensemble.png" class="img-fluid figure-img"></p>
-<figcaption>Ensembled Model</figcaption>
+<p><img src="homepage.png" class="img-fluid figure-img"></p>
+<figcaption>Dashboard Homepage</figcaption>
 </figure>
 </div>
-</section>
-<section id="simple-weighted-averaging" class="level2">
-<h2 class="anchored" data-anchor-id="simple-weighted-averaging">Simple Weighted Averaging</h2>
-<p>The most straightforward ensembling approach, and the approach I have been using is weighted averaging. Below is a function I wrote to ensemble the predicitons to a LightGBM and ARIMA model:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ensemble_predictions(lgb_predictions, arima_predictions, alpha):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Combine predictions from LightGBM and ARIMA models using a weighted average.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    lgb_predictions (np.array): Array of predictions from the LightGBM model.</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    arima_predictions (np.array): Array of predictions from the ARIMA model.</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    alpha (float): Weighting factor for the LightGBM predictions in the ensemble.</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    np.array: Array of ensemble predictions, combining both models' outputs.</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    ensemble_pred <span class="op">=</span> (</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        alpha <span class="op">*</span> lgb_predictions <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> alpha) <span class="op">*</span> arima_predictions</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    ensemble_pred <span class="op">=</span> np.maximum(ensemble_pred, <span class="dv">0</span>).<span class="bu">round</span>()</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ensemble_pred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This function: 1. Takes predictions from both models 2. Applies a weighting factor <code>alpha</code> to control each model’s influence 3. Ensures predictions are non-negative and rounded to integers (important for count data)</p>
-<p>The ‘alpha’ value determines how much weight I want on each. I tested many different and found a weight of 35% arima, 65% LightGBM gave the best results because the LightGBM model tended to overpredict large spikes and dips in the data, and ARIMA was able to smooth it out limiting the impact of the extereme lows and highs.</p>
+<section id="the-function-based-solution" class="level2">
+<h2 class="anchored" data-anchor-id="the-function-based-solution">The Function-Based Solution</h2>
+<p>I decided I needed to take a step back and think about a better way to do it. I realized one step I could take was have a script where all my functions were defined, then import them into my dashboard, something like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> forecast_script <span class="im">import</span> (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    train_test_split,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    create_features,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    run_naive_forecast,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    run_sarima,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    run_ets,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    run_xgboost,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    evaluate_forecasts</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This was awesome as all I had to do in actual dashboard was call the function and it made it easier to manage because I knew streamlit code was in the dashboard script and my functions were in the forecast script. But eventually this got too complicated too so I took it a step further and made each page in my dashboard a file and function. now I had two more functions and two more python files.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> forecast_script <span class="im">import</span> (</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    train_test_split,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    create_features,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    run_naive_forecast,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    run_sarima,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    run_ets,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    run_xgboost,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    evaluate_forecasts</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> model_comparison_page():</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#....</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> retails_script <span class="im">import</span> (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    load_and_preprocess,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    detect_seasonality_periods</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> resampling_functions <span class="im">import</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    add_resampling_section</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> data_overview_page():</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">#...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>that meant my dashboard.py file went from over 1000 lines of code (and would’ve been much more in the end) and a nightmare to edit to a organized file structure with different files for different things and only about 20 lines of code.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> data_overview_page <span class="im">import</span> data_overview_page</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> model_comparison <span class="im">import</span> model_comparison_page</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the page config first</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>st.set_page_config(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    page_title<span class="op">=</span><span class="st">"Time Series Analysis Dashboard"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    layout<span class="op">=</span><span class="st">"wide"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>selected_page <span class="op">=</span> st.radio(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Select Dashboard Section:"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"Data Overview"</span>, <span class="st">"Model Comparison"</span>],</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    horizontal<span class="op">=</span><span class="va">True</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> selected_page <span class="op">==</span> <span class="st">"Data Overview"</span>:</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    data_overview_page()</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> selected_page <span class="op">==</span> <span class="st">"Model Comparison"</span>:</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    model_comparison_page()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>This function is specific to the code I have where I had a set of LightGBM predictions and a set of ARIMA predictions, but it can easily be changed to fit other cicrumstances.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ensemble_predictions(model_predictions, weights<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Combine predictions from multiple models using a weighted average.</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    model_predictions (list): List of numpy arrays, each containing predictions from different models.</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    weights (list, optional): List of weighting factors for each model. </span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">                             If None, equal weights are assigned.</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">    np.array: Array of ensemble predictions, combining all models' outputs.</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    n_models <span class="op">=</span> <span class="bu">len</span>(model_predictions)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If weights given, use equal weights</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> weights <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        weights <span class="op">=</span> [<span class="fl">1.0</span> <span class="op">/</span> n_models] <span class="op">*</span> n_models</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    ensemble_pred <span class="op">=</span> np.zeros_like(model_predictions[<span class="dv">0</span>])</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, predictions <span class="kw">in</span> <span class="bu">enumerate</span>(model_predictions):</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        ensemble_pred <span class="op">+=</span> weights[i] <span class="op">*</span> predictions</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    ensemble_pred <span class="op">=</span> np.maximum(ensemble_pred, <span class="dv">0</span>).<span class="bu">round</span>()</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ensemble_pred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>An example of how this could be used is:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model1_preds <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">115</span>, <span class="dv">120</span>])</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>model2_preds <span class="op">=</span> np.array([<span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">125</span>])</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>model3_preds <span class="op">=</span> np.array([<span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">115</span>, <span class="dv">120</span>, <span class="dv">130</span>])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>model4_preds <span class="op">=</span> np.array([<span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">108</span>, <span class="dv">112</span>, <span class="dv">118</span>])</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign weights</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> [<span class="fl">0.4</span>, <span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ensemble <span class="op">=</span> ensemble_predictions(</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    [model1_preds, model2_preds, model3_preds, model4_preds], </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    weights<span class="op">=</span>weights</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This would take all 4 models and 40% weight to model 1, 10% to model 2, 30% to model 3, and 20% to model 4. By combining models together it can help reduce the impact of exterme predictions.</p>
+<p>I know it may seem like I didn’t really do anything and I just ‘shoved it under the bed’ so things look cleaner. But working on everything became so much easier. Refactoring my Streamlit dashboard using a function-based approach dramatically improved its maintainability. What was once a sprawling script is now a well-organized collection of focused functions, each with a clear purpose. I realized I had basically just applied abstraction, a concept I learned about in my programming with classes course, to Python.</p>
+<p>This modular approach is actually a fundamental programming principle that extends beyond just Streamlit applications. When functions are organized logically and serve a single purpose, it makes the entire development process smoother and more enjoyable. I know that all may seem like common sense to software engineers, but as a data sciencetist its something I realize I need to think about much more because I can’t just make a new jupyter notebook called ‘project_V4.ipynb’ everytime my codes gets messy.</p>
 
 
 </section>

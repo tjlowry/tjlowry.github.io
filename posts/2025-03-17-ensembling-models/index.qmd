@@ -6,6 +6,8 @@ One of the most helpful concepts I have found while learning about time series f
 
 Different forecasting models capture different aspects of time series data. Statistical models like ARIMA excel at capturing autocorrelation patterns, while machine learning models like LightGBM often better capture complex non-linear relationships. By combining these complementary strengths, we can get the best of both models.
 
+![Ensembled Model](ensemble.png)
+
 ## Simple Weighted Averaging
 
 The most straightforward ensembling approach, and the approach I have been using is weighted averaging. Below is a function I wrote to ensemble the predicitons to a LightGBM and ARIMA model:
