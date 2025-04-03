@@ -1,21 +1,83 @@
-# Time Series Forecasting: First Models in R and Python
+# Time Series Forecasting: ARIMA and ETS Models
 
-In my last post I talked about what time series forecasting is and introduced the concept of decompisition, both additive and multiplicative, and how we can see trends, seasonality, and other key things about our data. 
+## Stationarity Data
 
-But before we jump into forecasting there are still a few more things I need to talk about that are essentials for a forecast to work.
+A stationary time series has consistent statistical properties over time - constant mean, variance, and autocorrelation structure. Most forecasting models require stationarity to work effectively.
 
-## Data Cleaning
-In this example I will use dataset from kaggle
+Signs of non-stationarity include:
+- Visible trend (upward/downward)
+- Changing variance over time
+- Seasonal patterns
 
-## Our first model
-For this first example I will be using a well know statistical approach called SARIMA (Seasonal Auto-Regressive Integrated Moving Average) This is built off of an ARIMA model, but includes seasonalility into the equation. 
-## Python
+## Differencing
 
-### Libraries
-you will need pandas, a plotting library of your choice, and 
+Differencing transforms non-stationary data into stationary data by subtracting consecutive observations:
+- First-order differencing: y'ₜ = yₜ - yₜ₋₁
+- Second-order differencing: y''ₜ = y'ₜ - y'ₜ₋₁
 
-## R
+Different levels of differencing are used depending on how persistent trends are in your data, but the goal is to flatten out the trend in the data.
 
-### Packages
+## ARIMA Models
 
+ARIMA(p,d,q) combines three components:
+- **p (AutoRegressive)**: Number of lag observations used
+- **d (Integrated)**: Number of differencing required to make stationary
+- **q (Moving Average)**: Size of moving average window
 
+For example, ARIMA(1,1,1) uses 1 lag value, applies first differencing, and includes 1 moving average term.
+
+Seasonal patterns can be handled with SARIMA, adding seasonal parameters (P,D,Q,m) where m is the seasonality period.
+
+## ETS Models
+
+ETS stands for Error, Trend, Seasonality, focusing on the components we decompose time series into:
+- **Error**: Additive (A) or Multiplicative (M)
+- **Trend**: None (N), Additive (A), or Multiplicative (M), with optional dampening
+- **Seasonality**: None (N), Additive (A), or Multiplicative (M)
+
+For example, ETS(A,A,N) handles data with additive error, additive trend, and no seasonality.
+
+## Auto ARIMA
+
+Auto ARIMA algorithms automatically search for optimal ARIMA parameters by:
+1. Testing different combinations of p, d, q values
+2. Using information criteria (AIC, BIC) to select the best model
+3. Testing for stationarity and determining proper differencing
+
+```python
+from pmdarima import auto_arima
+
+model = auto_arima(data, seasonal=True, m=12,
+                  start_p=0, max_p=3, start_q=0, max_q=3,
+                  d=None, max_d=2, trace=True)
+```
+
+- `seasonal=True`: Tells the function to look for seasonal patterns in the data
+- `m=12`: Sets the seasonal period to 12 (good for monthly data)
+- `start_p=0, max_p=3`: Tests AR terms from 0 to 3
+- `start_q=0, max_q=3`: Tests MA terms from 0 to 3
+- `d=None, max_d=2`: Lets the function automatically determine differencing up to order 2
+- `trace=True`: Prints the model results as they're being tested
+
+AutoArima will go through possible combinations of these parameters in a step-wise method finding the combination that best minimizes AIC and BIC
+
+## When to Use Each Model
+
+**Use ARIMA when:**</br>
+- Data shows complex autocorrelation patterns</br>
+- You want to model time series based on previous values and errors, use the past to explain the present</br>
+- Data becomes stationary after differencing</br>
+
+**Use ETS when:**</br>
+- You have clear trend and seasonal patterns</br>
+- You have limited historical data</br>
+- Want the trend modeled into the data</br>
+
+For adding a resources section at the end of your blog post, here's a simple and effective approach:
+
+## Resources
+
+- **Online Resources:**
+  - [AutoArima Documentation](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html)
+  - [Time series textbook](https://otexts.com/fpp2/arima-r.html)
+  - [Statsmodel ETS Documentation](https://www.statsmodels.org/dev/examples/notebooks/generated/ets.html)
