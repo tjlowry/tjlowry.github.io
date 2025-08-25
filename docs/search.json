@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Data Science Blog",
     "section": "",
-    "text": "Organizing Streamlit Dashboards with Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoosting Forecast Accuracy Through Model Ensembling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting: Understanding the Components\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting: ARIMA and ETS Models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Organizing Streamlit Dashboards with Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoosting Forecast Accuracy Through Model Ensembling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting: Understanding the Components\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting: ARIMA and ETS Models\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -25,14 +25,14 @@
     "href": "resume.html",
     "title": "Resume",
     "section": "",
-    "text": "tjlowry02@gmail.com | LinkedIn"
+    "text": "Data Science Graduate Student\ntjlowry02@gmail.com | 480-297-6545 | LinkedIn\n\n\n\n\n\nAug 2025 – Present\nMaster of Science, Data Science (Statistics Track)\n\n\n\nApr 2025\nBachelor of Science, Data Science – Accounting Minor – Machine Learning Certificate\n- GPA: 3.89\n\n\n\n\n\nLanguages: Python, R, SQL, TypeScript, PHP, HTML, CSS, C#\nFrameworks/Libraries: TensorFlow, Pandas, Polars, NumPy, Scikit-learn, PySpark, Tidyverse, REST API, React, Node.js\nTools: Docker, Git, AWS, Databricks, Power BI, Tableau, Adobe Suite\n\n\n\n\n\n\nSenior Capstone Project, 2025\n\nDeveloped comprehensive end-to-end dashboard using Streamlit allowing users to compare multiple forecasting methodologies including ARIMA, neural networks, and ensemble methods\nImplemented data preprocessing pipeline with Box-Cox transformations, autocorrelation analysis, and seasonal decomposition for business-friendly pattern detection\n\nCreated educational resources and technical blog to make advanced forecasting accessible to non-technical users\nTech Stack: Python, Streamlit, Polars, TensorFlow/Keras, Scikit-Learn, NumPy\n\n\n\n\nStatistics and Data Science Consulting Course, 2024\n\nServed as data science consultant for real business client, developing ETL pipeline with Tableau dashboard for sales performance visualization across product categories\nCollaborated with team to analyze business requirements and deliver actionable insights for decision-making\nTech Stack: ETL tools, Tableau, SQL\n\n\n\n\n\n\n\nBYU-Idaho McKay Maclab | Rexburg, ID | Jan 2023 – July 2025\n\nCollaborated with a team of 3 in full stack development of Maclab website and 3D printing queue\nConducted interviews, reviewed resumes to screen candidates, and provided training to new employees\nFacilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team\nDesigned interactive Streamlit dashboards to track KPI performance, resulting in a 14% average improvement across all metrics\n\n\n\n\nBYU-Idaho Department of Mathematics | Rexburg, ID | April 2024 – April 2025\n\nServed as teaching assistant and tutor for 5 core courses including “Intro to Programming,” “Data Science Programming,” and “Biostatistics,” plus staffed the Data Science Tutoring Drop-In Lab supporting 200+ students per semester\nLed weekly group meetings of 10 students and conducted 7-10 individual tutoring appointments per week, focusing on Python, R, Excel, and statistical analysis\nGraded 100+ student assignments weekly and provided detailed feedback on areas of improvement, while offering real-time problem-solving support for walk-in students across all data science courses\n\n\n\n\nGeorge W. Lowry Inc. | Salida, CA | Sept 2023 – Dec 2023\n\nMigrated legacy database system to AWS and optimized database architecture by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime\nIdentified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency\nDeveloped a CRM using a PHP framework, enhancing location data tracking and streamlining communication between sales team and delivery drivers for improved logistics\n\n\n\n\nPIC Business Systems | San Antonio, TX | May 2023 – Sept 2023\n\nDeveloped a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE\nEnhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model\nAutomated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts\n\n\n\nReferences available upon request"
   },
   {
     "objectID": "resume.html#education",
     "href": "resume.html#education",
     "title": "Resume",
-    "section": "Education",
-    "text": "Education\nBrigham Young University-Idaho | Rexburg, ID\nBS, Data Science - Accounting Minor - Machine Learning Certificate\nExpected Graduation: April 2025\nGPA: 3.89"
+    "section": "",
+    "text": "Aug 2025 – Present\nMaster of Science, Data Science (Statistics Track)\n\n\n\nApr 2025\nBachelor of Science, Data Science – Accounting Minor – Machine Learning Certificate\n- GPA: 3.89"
   },
   {
     "objectID": "resume.html#skills",
@@ -74,7 +74,7 @@
     "href": "about.html",
     "title": "Projects",
     "section": "",
-    "text": "My Projects\nThis page will be updated soon with projects I have worked on."
+    "text": "Projects\nI’m currently updating this section to showcase detailed project case studies and code samples.\nIn the meantime, you can explore my resume to see summaries of my key projects including time series forecasting, machine learning engineering, and dashboard development. For more detailed discussions about any of my work, feel free to contact me via email or LinkedIn."
   },
   {
     "objectID": "about.html#what-im-passionate-about",
@@ -220,8 +220,8 @@
     "objectID": "resume.html#technical-skills",
     "href": "resume.html#technical-skills",
     "title": "Resume",
-    "section": "Technical Skills",
-    "text": "Technical Skills\n\n\n\nData Science\n\nPython (Pandas, Polars), R (Tidyverse)\nMachine Learning (TensorFlow, Scikit-Learn), Demand Forecasting\nVisualization (Tableau, Power BI, ggplot2)\n\n\n\n\nDevelopment & Engineering\n\nHTML, CSS, JavaScript, TypeScript, PHP, C#\nAPIs, ETL Pipelines, PySpark, SQL\nExcel/VBA, Adobe Suite, Microsoft Office"
+    "section": "",
+    "text": "Languages: Python, R, SQL, TypeScript, PHP, HTML, CSS, C#\nFrameworks/Libraries: TensorFlow, Pandas, Polars, NumPy, Scikit-learn, PySpark, Tidyverse, REST API, React, Node.js\nTools: Docker, Git, AWS, Databricks, Power BI, Tableau, Adobe Suite"
   },
   {
     "objectID": "resume.html#tyler-lowry",
@@ -390,5 +390,26 @@
     "title": "Tyler Lowry",
     "section": "",
     "text": "🎓 Pursuing advanced coursework in statistical theory and machine learning\n🔬 Seeking research opportunities in AI/ML applications to financial data\n📝 Building portfolio projects that showcase statistical modeling expertise"
+  },
+  {
+    "objectID": "resume.html#projects",
+    "href": "resume.html#projects",
+    "title": "Resume",
+    "section": "",
+    "text": "Senior Capstone Project, 2025\n\nDeveloped comprehensive end-to-end dashboard using Streamlit allowing users to compare multiple forecasting methodologies including ARIMA, neural networks, and ensemble methods\nImplemented data preprocessing pipeline with Box-Cox transformations, autocorrelation analysis, and seasonal decomposition for business-friendly pattern detection\n\nCreated educational resources and technical blog to make advanced forecasting accessible to non-technical users\nTech Stack: Python, Streamlit, Polars, TensorFlow/Keras, Scikit-Learn, NumPy\n\n\n\n\nStatistics and Data Science Consulting Course, 2024\n\nServed as data science consultant for real business client, developing ETL pipeline with Tableau dashboard for sales performance visualization across product categories\nCollaborated with team to analyze business requirements and deliver actionable insights for decision-making\nTech Stack: ETL tools, Tableau, SQL"
+  },
+  {
+    "objectID": "resume.html#work-experience",
+    "href": "resume.html#work-experience",
+    "title": "Resume",
+    "section": "",
+    "text": "BYU-Idaho McKay Maclab | Rexburg, ID | Jan 2023 – July 2025\n\nCollaborated with a team of 3 in full stack development of Maclab website and 3D printing queue\nConducted interviews, reviewed resumes to screen candidates, and provided training to new employees\nFacilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team\nDesigned interactive Streamlit dashboards to track KPI performance, resulting in a 14% average improvement across all metrics\n\n\n\n\nBYU-Idaho Department of Mathematics | Rexburg, ID | April 2024 – April 2025\n\nServed as teaching assistant and tutor for 5 core courses including “Intro to Programming,” “Data Science Programming,” and “Biostatistics,” plus staffed the Data Science Tutoring Drop-In Lab supporting 200+ students per semester\nLed weekly group meetings of 10 students and conducted 7-10 individual tutoring appointments per week, focusing on Python, R, Excel, and statistical analysis\nGraded 100+ student assignments weekly and provided detailed feedback on areas of improvement, while offering real-time problem-solving support for walk-in students across all data science courses\n\n\n\n\nGeorge W. Lowry Inc. | Salida, CA | Sept 2023 – Dec 2023\n\nMigrated legacy database system to AWS and optimized database architecture by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime\nIdentified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency\nDeveloped a CRM using a PHP framework, enhancing location data tracking and streamlining communication between sales team and delivery drivers for improved logistics\n\n\n\n\nPIC Business Systems | San Antonio, TX | May 2023 – Sept 2023\n\nDeveloped a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE\nEnhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model\nAutomated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts\n\n\n\nReferences available upon request"
+  },
+  {
+    "objectID": "resume.html#additional-experience",
+    "href": "resume.html#additional-experience",
+    "title": "Resume",
+    "section": "",
+    "text": "Financial Data & Business Analysis - Applied time series forecasting techniques to company sales data for demand forecasting models - Developed ETL pipeline with Tableau dashboard for sales performance visualization across product categories\n- Gained hands-on experience in small business finance through financial report generation and pricing model automation - Strong foundation in financial principles through accounting minor and practical business applications\n\nReferences available upon request"
   }
 ]

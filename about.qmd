@@ -2,7 +2,8 @@
 title: "Projects"
 ---
 
-# My Projects
-This section is currently being updated with projects in machine learnings, statistcal analysis, data engineering, and other topics.
+# Projects
 
-Please reach out via [email](mailto:tjlowry02@gmail.com) or [LinkedIn](https://www.linkedin.com/in/tylerj-lowry) if you have any questions about projects I have done.
+I'm currently updating this section to showcase detailed project case studies and code samples.
+
+In the meantime, you can explore my [resume](resume.qmd) to see summaries of my key projects including time series forecasting, machine learning engineering, and dashboard development. For more detailed discussions about any of my work, feel free to contact me via [email](mailto:tjlowry02@gmail.com) or [LinkedIn](https://www.linkedin.com/in/tylerj-lowry).

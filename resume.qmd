@@ -1,65 +1,106 @@
 ---
 title: "Resume"
+format:
+  html:
+    css: resume.css
 ---
-## Tyler Lowry
-tjlowry02@gmail.com | [LinkedIn](https://linkedin.com/in/tylerj-lowry)
+
+<div class="page-container">
+
+# Tyler Lowry
+**Data Science Graduate Student**
+
+[tjlowry02@gmail.com](mailto:tjlowry02@gmail.com) | 480-297-6545 | [LinkedIn](https://www.linkedin.com/in/tylerj-lowry)
+
+---
 
 ## Education
 
-**Brigham Young University-Idaho** | Rexburg, ID  
-BS, Data Science - Accounting Minor - Machine Learning Certificate  
-Expected Graduation: April 2025  
-GPA: 3.89
+<div class="experience-entry">
+### Texas A&M University | College Station, TX
+*Aug 2025 – Present*  
+**Master of Science, Data Science** (Statistics Track)
+</div>
+
+<div class="experience-entry">
+### Brigham Young University-Idaho | Rexburg, ID
+*Apr 2025*  
+**Bachelor of Science, Data Science** – Accounting Minor – Machine Learning Certificate  
+- GPA: 3.89
+</div>
+
+---
 
 ## Technical Skills
 
-:::{.columns}
-:::{.column width="50%"}
-### Data Science
-- Python (Pandas, Polars), R (Tidyverse)
-- Machine Learning (TensorFlow, Scikit-Learn), Demand Forecasting
-- Visualization (Tableau, Power BI, ggplot2)
-:::
+**Languages:** Python, R, SQL, TypeScript, PHP, HTML, CSS, C#  
+**Frameworks/Libraries:** TensorFlow, Pandas, Polars, NumPy, Scikit-learn, PySpark, Tidyverse, REST API, React, Node.js  
+**Tools:** Docker, Git, AWS, Databricks, Power BI, Tableau, Adobe Suite
 
-:::{.column width="50%"}
-### Development & Engineering
-- HTML, CSS, JavaScript, TypeScript, PHP, C#
-- APIs, ETL Pipelines, PySpark, SQL
-- Excel/VBA, Adobe Suite, Microsoft Office
-:::
-:::
+---
 
-## Professional Experience
-::: {.experience-entry}
-### Machine Learning Engineer Intern | PIC Business Systems
-*May 2023 - Sept 2023* | San Antonio, TX
+## Projects
 
-- Developed a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE
-- Enhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model
-- Automated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts
-:::
-::: {.experience-entry}
-### TA/Tutor | BYU-Idaho Department of Mathematics
-*April 2024 - Present* | Rexburg, ID
+<div class="experience-entry">
+### Time Series Forecasting Comparison Dashboard
+*Senior Capstone Project, 2025*
 
-- Served as a teaching assistant and tutor for "Intro to Programming," "Math for the Real World," "Data Wrangling and Visualization," "Data Science Programming," and "Biostatistics"
-- Led group and one-on-one tutoring sessions focused on Python, R, Excel, and statistics
-- Provided general data science support at the Data Science Tutoring Lab, assisting students across various data science and statistics courses with Python, R, and other coursework-related questions
-:::
-::: {.experience-entry}
-### Team Lead/Developer | BYU-Idaho McKay Maclab
-*Jan 2023 - Present* | Rexburg, ID
+- Developed comprehensive end-to-end dashboard using Streamlit allowing users to compare multiple forecasting methodologies including ARIMA, neural networks, and ensemble methods
+- Implemented data preprocessing pipeline with Box-Cox transformations, autocorrelation analysis, and seasonal decomposition for business-friendly pattern detection  
+- Created educational resources and technical blog to make advanced forecasting accessible to non-technical users
+- **Tech Stack:** Python, Streamlit, Polars, TensorFlow/Keras, Scikit-Learn, NumPy
+</div>
+
+<div class="experience-entry">
+### Sales Analytics ETL Pipeline & Dashboard
+*Statistics and Data Science Consulting Course, 2024*
+
+- Served as data science consultant for real business client, developing ETL pipeline with Tableau dashboard for sales performance visualization across product categories
+- Collaborated with team to analyze business requirements and deliver actionable insights for decision-making
+- **Tech Stack:** ETL tools, Tableau, SQL
+</div>
+
+## Work Experience
+
+<div class="experience-entry">
+### Team Lead/Developer
+*BYU-Idaho McKay Maclab* | Rexburg, ID | *Jan 2023 – July 2025*
 
 - Collaborated with a team of 3 in full stack development of Maclab website and 3D printing queue
 - Conducted interviews, reviewed resumes to screen candidates, and provided training to new employees
 - Facilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team
-- Designed interactive streamlit dashboards to track KPI performance, resulting in a 14% average improvement across all metrics
-:::
-::: {.experience-entry}
-### Intern | George W. Lowry Inc.
-*Sept 2023 - Dec 2023* | Salida, CA
+- Designed interactive Streamlit dashboards to track KPI performance, resulting in a 14% average improvement across all metrics
+</div>
+
+<div class="experience-entry">
+### TA/Tutor  
+*BYU-Idaho Department of Mathematics* | Rexburg, ID | *April 2024 – April 2025*
+
+- Served as teaching assistant and tutor for 5 core courses including "Intro to Programming," "Data Science Programming," and "Biostatistics," plus staffed the Data Science Tutoring Drop-In Lab supporting 200+ students per semester
+- Led weekly group meetings of 10 students and conducted 7-10 individual tutoring appointments per week, focusing on Python, R, Excel, and statistical analysis
+- Graded 100+ student assignments weekly and provided detailed feedback on areas of improvement, while offering real-time problem-solving support for walk-in students across all data science courses
+</div>
+
+<div class="experience-entry">
+### Intern
+*George W. Lowry Inc.* | Salida, CA | *Sept 2023 – Dec 2023*
 
 - Migrated legacy database system to AWS and optimized database architecture by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime
 - Identified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency
 - Developed a CRM using a PHP framework, enhancing location data tracking and streamlining communication between sales team and delivery drivers for improved logistics
-:::
+</div>
+
+<div class="experience-entry">
+### Machine Learning Engineer Intern
+*PIC Business Systems* | San Antonio, TX | *May 2023 – Sept 2023*
+
+- Developed a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE
+- Enhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model
+- Automated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts
+</div>
+
+---
+
+*References available upon request*
+
+</div>
