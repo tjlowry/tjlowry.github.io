@@ -11,14 +11,14 @@
     "href": "index.html",
     "title": "Tyler Lowry",
     "section": "",
-    "text": "I’m a Data Science student at BYU-Idaho passionate about turning complex data into actionable insights. With a minor in Accounting and a Machine Learning Certificate, I hope to bridge the gap between business and statistics.\nAt BYU-Idaho, I serve as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab, which has strengthened my skills in programming, statistics, and leadership.\nAfter graduating in April 2025, I’ll be continuing my education at Texas A&M for a Master’s in Statistical Data Science.\n\n\n\n\n\n\n\n\n\n\n\nPython (Pandas, Polars, Scikit-learn, TensorFlow)\nR\nSQL\n\n\n\n\n\nTableau\nPower BI\nggplot\nPlotly, lets_plot, Seaborn\n\n\n\n\n\n\nSQL Database Optimization\nAWS EC2/S3\nDatabase Design & Architecture\n\n\n\n\n\nPHP (Filament), C#\nJavaScript/TypeScript\nHTML/CSS\n\n\n\n\n\n\n\n\nCheck out my Projects page for a showcase of my recent work"
+    "text": "I’m a graduate student at Texas A&M University pursuing a Master’s in Data Science with a focus on statistics. I am passionate about transforming complex data into actionable insights, and I believe the best preparation for the rapidly evolving AI/ML landscape is developing a deep understanding of the underlying mathematical foundations.\nI completed my undergraduate degree at BYU-Idaho in Data Science with a minor in Accounting and Machine Learning Certificate, giving me a unique perspective that bridges business understanding with statistical rigor.\nDuring my undergraduate studies, I served as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab, which strengthened my skills in programming, statistics, and leadership.\nMy experience spans machine learning engineering, time series forecasting, and building user-friendly analytics tools. I’m particularly interested in applying advanced statistical methods and machine learning to solve real-world problems in finance and business.\n\n\n\n\n\n\n\n\n\n\n\nPython, R, SQL\nTypeScript, JavaScript\nPHP, C#, HTML/CSS\n\n\n\n\n\nTensorFlow, Scikit-learn, PyTorch\nPandas, Polars, NumPy, PySpark\nR Tidyverse\nStatistical Modeling & Analysis\n\n\n\n\n\n\nTableau, Power BI\nggplot2, Plotly, Seaborn\nInteractive Dashboards\n\n\n\n\n\nAWS (EC2, S3, Lambda), Databricks\nDocker, Git\nREST APIs, React, Node.js\nDatabase Design & Optimization"
   },
   {
     "objectID": "index.html#skills",
     "href": "index.html#skills",
     "title": "Tyler Lowry",
     "section": "",
-    "text": "Python (Pandas, Polars, Scikit-learn, TensorFlow)\nR\nSQL\n\n\n\n\n\nTableau\nPower BI\nggplot\nPlotly, lets_plot, Seaborn\n\n\n\n\n\n\nSQL Database Optimization\nAWS EC2/S3\nDatabase Design & Architecture\n\n\n\n\n\nPHP (Filament), C#\nJavaScript/TypeScript\nHTML/CSS"
+    "text": "Python, R, SQL\nTypeScript, JavaScript\nPHP, C#, HTML/CSS\n\n\n\n\n\nTensorFlow, Scikit-learn, PyTorch\nPandas, Polars, NumPy, PySpark\nR Tidyverse\nStatistical Modeling & Analysis\n\n\n\n\n\n\nTableau, Power BI\nggplot2, Plotly, Seaborn\nInteractive Dashboards\n\n\n\n\n\nAWS (EC2, S3, Lambda), Databricks\nDocker, Git\nREST APIs, React, Node.js\nDatabase Design & Optimization"
   },
   {
     "objectID": "resume.html",
@@ -369,5 +369,26 @@
     "title": "Organizing Streamlit Dashboards with Functions",
     "section": "",
     "text": "I know it may seem like I didn’t really do anything and I just ‘shoved it under the bed’ so things look cleaner. But working on everything became so much easier. Refactoring my Streamlit dashboard using a function-based approach dramatically improved its maintainability. What was once a sprawling script is now a well-organized collection of focused functions, each with a clear purpose. I realized I had basically just applied abstraction, a concept I learned about in my programming with classes course, to Python.\nThis modular approach is actually a fundamental programming principle that extends beyond just Streamlit applications. When functions are organized logically and serve a single purpose, it makes the entire development process smoother and more enjoyable. I know that all may seem like common sense to software engineers, but as a data sciencetist its something I realize I need to think about much more because I can’t just make a new jupyter notebook called ‘project_V4.ipynb’ everytime my codes gets messy."
+  },
+  {
+    "objectID": "index.html#contact-information",
+    "href": "index.html#contact-information",
+    "title": "Tyler Lowry",
+    "section": "",
+    "text": "📧 tjlowry02@gmail.com\n💼 LinkedIn\n📱 480-297-6545"
+  },
+  {
+    "objectID": "index.html#technical-skills",
+    "href": "index.html#technical-skills",
+    "title": "Tyler Lowry",
+    "section": "",
+    "text": "Python, R, SQL\nTypeScript, JavaScript\nPHP, C#, HTML/CSS\n\n\n\n\n\nTensorFlow, Scikit-learn, PyTorch\nPandas, Polars, NumPy, PySpark\nR Tidyverse\nStatistical Modeling & Analysis\n\n\n\n\n\n\nTableau, Power BI\nggplot2, Plotly, Seaborn\nInteractive Dashboards\n\n\n\n\n\nAWS (EC2, S3, Lambda), Databricks\nDocker, Git\nREST APIs, React, Node.js\nDatabase Design & Optimization"
+  },
+  {
+    "objectID": "index.html#what-im-currently-working-on",
+    "href": "index.html#what-im-currently-working-on",
+    "title": "Tyler Lowry",
+    "section": "",
+    "text": "🎓 Pursuing advanced coursework in statistical theory and machine learning\n🔬 Seeking research opportunities in AI/ML applications to financial data\n📝 Building portfolio projects that showcase statistical modeling expertise"
   }
 ]

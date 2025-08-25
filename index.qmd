@@ -6,11 +6,13 @@ title: "Tyler Lowry"
 
 :::{.columns .gx-5}
 :::{.column width="60%" .px-4}
-I'm a Data Science student at BYU-Idaho passionate about turning complex data into actionable insights. With a minor in Accounting and a Machine Learning Certificate, I hope to bridge the gap between business and statistics.
+I'm a graduate student at Texas A&M University pursuing a Master's in Data Science with a focus on statistics. I am passionate about transforming complex data into actionable insights, and I believe the best preparation for the rapidly evolving AI/ML landscape is developing a deep understanding of the underlying mathematical foundations. 
 
-At BYU-Idaho, I serve as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab, which has strengthened my skills in programming, statistics, and leadership.
+I completed my undergraduate degree at BYU-Idaho in Data Science with a minor in Accounting and Machine Learning Certificate, giving me a unique perspective that bridges business understanding with statistical rigor.
 
-After graduating in April 2025, I'll be continuing my education at Texas A&M for a Master's in Statistical Data Science.
+During my undergraduate studies, I served as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab, which strengthened my skills in programming, statistics, and leadership.
+
+My experience spans machine learning engineering, time series forecasting, and building user-friendly analytics tools. I'm particularly interested in applying advanced statistical methods and machine learning to solve real-world problems in finance and business.
 :::
 
 :::{.column width="40%" .px-4}
@@ -22,30 +24,28 @@ After graduating in April 2025, I'll be continuing my education at Texas A&M for
 
 :::{.columns .gx-5}
 :::{.column width="50%" .px-4}
-### Data Science & ML
-- Python (Pandas, Polars, Scikit-learn, TensorFlow)
-- R
-- SQL
+### Programming Languages
+- Python, R, SQL
+- TypeScript, JavaScript
+- PHP, C#, HTML/CSS
 
-### Data Visualization
-- Tableau
-- Power BI
-- ggplot
-- Plotly, lets_plot, Seaborn
+### Machine Learning & Statistics
+- TensorFlow, Scikit-learn, PyTorch
+- Pandas, Polars, NumPy, PySpark
+- R Tidyverse
+- Statistical Modeling & Analysis
 :::
 
 :::{.column width="50%" .px-4}
-### Database Management
-- SQL Database Optimization
-- AWS EC2/S3
-- Database Design & Architecture
+### Data Visualization & BI
+- Tableau, Power BI
+- ggplot2, Plotly, Seaborn
+- Interactive Dashboards
 
-### Web Development
-- PHP (Filament), C#
-- JavaScript/TypeScript
-- HTML/CSS
+### Cloud & Development
+- AWS (EC2, S3, Lambda), Databricks
+- Docker, Git
+- REST APIs, React, Node.js
+- Database Design & Optimization
 :::
 :::
-
-## Featured Projects
-- Check out my Projects page for a showcase of my recent work
