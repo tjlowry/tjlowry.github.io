@@ -33,32 +33,11 @@ format:
 
 ## Technical Skills
 
-**Languages:** Python, R, SQL, TypeScript, PHP, HTML, CSS, C#  
+**Languages:** Python, R, SQL, TypeScript, PHP, HTML, CSS, C#
 **Frameworks/Libraries:** TensorFlow, Pandas, Polars, NumPy, Scikit-learn, PySpark, Tidyverse, REST API, React, Node.js  
-**Tools:** Docker, Git, AWS, Databricks, Power BI, Tableau, Adobe Suite
+**Tools:** Docker, Git, AWS, Databricks, Power BI, Tableau, Jupyter, Adobe Suite
 
 ---
-
-## Projects
-
-<div class="experience-entry">
-### Time Series Forecasting Comparison Dashboard
-*Senior Capstone Project, 2025*
-
-- Developed comprehensive end-to-end dashboard using Streamlit allowing users to compare multiple forecasting methodologies including ARIMA, neural networks, and ensemble methods
-- Implemented data preprocessing pipeline with Box-Cox transformations, autocorrelation analysis, and seasonal decomposition for business-friendly pattern detection  
-- Created educational resources and technical blog to make advanced forecasting accessible to non-technical users
-- **Tech Stack:** Python, Streamlit, Polars, TensorFlow/Keras, Scikit-Learn, NumPy
-</div>
-
-<div class="experience-entry">
-### Sales Analytics ETL Pipeline & Dashboard
-*Statistics and Data Science Consulting Course, 2024*
-
-- Served as data science consultant for real business client, developing ETL pipeline with Tableau dashboard for sales performance visualization across product categories
-- Collaborated with team to analyze business requirements and deliver actionable insights for decision-making
-- **Tech Stack:** ETL tools, Tableau, SQL
-</div>
 
 ## Work Experience
 
@@ -66,10 +45,10 @@ format:
 ### Team Lead/Developer
 *BYU-Idaho McKay Maclab* | Rexburg, ID | *Jan 2023 – July 2025*
 
-- Collaborated with a team of 3 in full stack development of Maclab website and 3D printing queue
-- Conducted interviews, reviewed resumes to screen candidates, and provided training to new employees
-- Facilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team
 - Designed interactive Streamlit dashboards to track KPI performance, resulting in a 14% average improvement across all metrics
+- Collaborated with a team of 3 in full stack development of Maclab website and 3D printing queue
+- Facilitated weekly meetings to discuss goals, track task progress, and deliver short training sessions to the team
+- Conducted interviews, reviewed resumes to screen candidates, and provided training to new employees
 </div>
 
 <div class="experience-entry">
@@ -82,21 +61,54 @@ format:
 </div>
 
 <div class="experience-entry">
-### Intern
-*George W. Lowry Inc.* | Salida, CA | *Sept 2023 – Dec 2023*
+### Machine Learning Engineer Intern
+*PIC Business Systems* | San Antonio, TX | *May 2024 – Sept 2024*
 
-- Migrated legacy database system to AWS and optimized database architecture by eliminating redundant joins, improving foreign key usage, and refining indexes, resulting in a nearly two-hour reduction in report generation runtime
-- Identified and implemented an AWS EC2 instance, increasing computing power while lowering costs, reducing server crashes, and improving efficiency
-- Developed a CRM using a PHP framework, enhancing location data tracking and streamlining communication between sales team and delivery drivers for improved logistics
+- Built an ensembled ARIMA + LightGBM model for 90-day item-location demand forecasting, improving median MAPE by 30% over the existing baseline
+- Engineered lag features, rolling statistics, and normalized targets across hierarchical time series to capture seasonality and cross-warehouse demand patterns
+- Integrated external signals (weather, calendar/holiday effects) via API pipelines in Pandas to improve forecast robustness on volatile SKUs
 </div>
 
 <div class="experience-entry">
-### Machine Learning Engineer Intern
-*PIC Business Systems* | San Antonio, TX | *May 2023 – Sept 2023*
+### Data Engineering Intern
+*George W. Lowry Inc.* | Salida, CA | *Sept 2023 – Dec 2023*
 
-- Developed a 90-day sales forecasting ensembled model and an interactive dashboard for product performance, resulting in a 30% improvement in median forecast MAPE
-- Enhanced data quality by integrating external factors such as weather and date, using APIs and Pandas to create additional features for the model
-- Automated monthly forecasting and database updates by leveraging AWS Lambda and S3 Buckets, enabling easy access to forecasts and reducing manual efforts
+- Reverse-engineered an undocumented legacy database nearing end-of-support by reconstructing the schema from printed documentation and tracing production reports back to source tables, establishing a working knowledge base of the system
+- Led migration from Informix to AWS to support the company's transition to PetroleumRx for CRM operations, re-architecting the schema by eliminating redundant joins, correcting foreign key relationships, and optimizing indexes — reducing report generation runtime by nearly 2 hours
+- Researched and recommended AWS EC2 instance options tailored to workload requirements, informing a deployment that increased compute capacity while lowering costs and eliminating recurring server crashes that had disrupted daily operations
+</div>
+
+## Research
+
+<div class="experience-entry">
+### 3D Spatial Transcriptomics Colocalization Analysis
+*Graduate Research with Dr. Xiaoqing (Jade) Wang, Texas A&M University | 2025 – Present*
+
+- Extending the isoST 3D reconstruction pipeline to intercellular colocalization analysis on the Zhuang-ABCA-2 MERFISH mouse brain dataset (43.1M cells, 1,122 genes), with target submission to *Bioinformatics*
+- Discovered novel cell-type colocalization patterns detectable only in 3D reconstruction, currently validating against 2D MERFISH baselines and published neuroscience literature
+- Engineered GPU-accelerated pipeline scaling to 43M cells via FAISS k-NN label propagation, lazy PCA loading (192 GB → 9 GB), and adaptive z-thinning for density correction
+- **Tech Stack:** Python, PyTorch, PyTorch Geometric, FAISS GPU, Scanpy, Google Colab (A100)
+</div>
+
+## Projects
+
+<div class="experience-entry">
+### Time Series Forecasting Comparison Dashboard
+*Senior Capstone Project, 2025*
+
+- Developed comprehensive end-to-end dashboard using Streamlit allowing users to compare multiple forecasting methodologies including ARIMA, neural networks, and ensemble methods
+- Implemented data preprocessing pipeline with Box-Cox transformations, autocorrelation analysis, and seasonal decomposition to reveal trend and seasonality patterns
+- Created educational resources and technical blog to make advanced forecasting accessible to non-technical users
+- **Tech Stack:** Python, Streamlit, Polars, TensorFlow/Keras, scikit-learn, NumPy
+</div>
+
+<div class="experience-entry">
+### Sales Analytics ETL Pipeline & Dashboard
+*Statistics and Data Science Consulting Course, 2024*
+
+- Served as data science consultant for a real business client, building a Python/FastAPI ETL pipeline feeding a Tableau dashboard for sales performance across product categories
+- Partnered with stakeholders to translate business requirements into data models and visualizations supporting category-level decision-making
+- **Tech Stack:** Python, FastAPI, Tableau, SQL
 </div>
 
 ---

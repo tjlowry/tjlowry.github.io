@@ -6,13 +6,9 @@ title: "Tyler Lowry"
 
 :::{.columns .gx-5}
 :::{.column width="60%" .px-4}
-I'm a graduate student at Texas A&M University pursuing a Master's in Data Science with a focus on statistics. I am passionate about transforming complex data into actionable insights, and I believe the best preparation for the rapidly evolving AI/ML landscape is developing a deep understanding of the underlying mathematical foundations. 
+I'm a first-year Data Science MS student at Texas A&M, where I'm doing graduate research on 3D spatial transcriptomics — building GPU-accelerated pipelines to analyze 43M-cell MERFISH datasets. Before grad school, I worked as an ML engineer building production forecasting systems, where I learned to care as much about the math being correct as the code running fast.
 
-I completed my undergraduate degree at BYU-Idaho in Data Science with a minor in Accounting and Machine Learning Certificate, giving me a unique perspective that bridges business understanding with statistical rigor.
-
-During my undergraduate studies, I served as both a TA/Tutor in the Mathematics Department and Team Lead at the McKay Maclab, which strengthened my skills in programming, statistics, and leadership.
-
-My experience spans machine learning engineering, time series forecasting, and building user-friendly analytics tools. I'm particularly interested in applying advanced statistical methods and machine learning to solve real-world problems in finance and business.
+My background sits at the intersection of statistics, machine learning, and business. I paired a Data Science degree with an Accounting minor in undergrad, and that combination shapes how I approach problems. I'm most interested in applying rigorous statistical methods to real decisions in finance, operations, and anywhere messy data hides useful signal.
 :::
 
 :::{.column width="40%" .px-4}
