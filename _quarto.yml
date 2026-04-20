@@ -14,8 +14,10 @@ website:
     right:
       - icon: github
         href: https://github.com/tjlowry
+        target: _blank
       - icon: linkedin
         href: https://www.linkedin.com/in/tylerj-lowry
+        target: _blank
 
 format:
   html:
